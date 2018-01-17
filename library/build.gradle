@@ -33,9 +33,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api "com.android.support:support-annotations:$supportLibraryVersion"
 
-    api "android.arch.lifecycle:extensions:$architectureComponentsVersion"
-    annotationProcessor "android.arch.lifecycle:compiler:$architectureComponentsVersion"
-
     api "io.reactivex.rxjava2:rxjava:$rxjava2Version"
     api "io.reactivex.rxjava2:rxandroid:$rxandroid2Version"
 

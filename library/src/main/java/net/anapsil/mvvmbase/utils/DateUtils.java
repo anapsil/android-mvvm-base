@@ -12,6 +12,7 @@ import java.util.Locale;
 
 public class DateUtils {
     public static final String DEFAULT_PATTERN = "yyyy-MM-dd";
+    public static final String BRAZILIAN_PATTERN = "dd/MM/yyyy";
 
     public static Date convert(String dateString) throws ParseException {
         return convert(dateString, DEFAULT_PATTERN);
@@ -52,6 +53,6 @@ public class DateUtils {
     }
 
     public static String getMonth(Date date) {
-        return new SimpleDateFormat("MMMM", Locale.US).format(date);
+        return new SimpleDateFormat("MMMM", Locale.getDefault()).format(date);
     }
 }

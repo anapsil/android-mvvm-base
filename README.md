@@ -11,11 +11,11 @@ Library with Android code base for MVVM architecture with DataBinding.
 
 * Add it in your root build.gradle:
 ```groovy 
+allprojects {
    repositories {
-       maven {
-           url  "https://dl.bintray.com/anapsil83/maven-android" 
-       }
+       maven { url  "https://dl.bintray.com/anapsil83/maven-android" }
    }
+}
 ``` 
 
 * Add the dependency:

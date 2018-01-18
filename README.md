@@ -4,8 +4,7 @@ Library with Android code base for MVVM architecture with DataBinding and Dagger
 
 ## Installation
 
-#### Download
-Latest version [ ![Latest version](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
+[ ![Latest version](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
 
 #### Gradle
 

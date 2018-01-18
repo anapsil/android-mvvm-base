@@ -1,11 +1,40 @@
-# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#) [ ![Download](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
+# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#) 
 
 Library with Android code base for MVVM architecture with DataBinding.
 
-## Download
+## Installation
 
-Download [the latest AAR](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion) or grab via Maven:
+#### Download
+[ ![Download](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
 
+#### Gradle
+
+* Add it in your root build.gradle:
+```groovy 
+   repositories {
+       maven {
+           url  "https://dl.bintray.com/anapsil83/maven-android" 
+       }
+   }
+``` 
+
+* Add the dependency:
+```groovy
+implementation 'net.anapsil:android-mvvm-base:0.1.0'
+```
+
+#### Maven
+
+* Add the bintray repository to your maven file:
+
+```xml
+<repository>
+    <id>bintray-anapsil83-maven-android</id>
+    <url>https://dl.bintray.com/anapsil83/maven-android</url>
+</repository>
+```
+
+* Add the dependency in the form
 ```xml
 <dependency>
   <groupId>net.anapsil</groupId>
@@ -14,16 +43,10 @@ Download [the latest AAR](https://bintray.com/anapsil83/maven-android/android-mv
 </dependency>
 ```
 
-or Gradle:
-
-```groovy
-implementation 'net.anapsil:android-mvvm-base:0.1.0'
-```
-
 License
 -------
 
-    Copyright (C) 2018
+    Copyright (C) 2018 - Ana Paula da Silva
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

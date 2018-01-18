@@ -1,4 +1,4 @@
-# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#) 
+# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#)  [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) 
 
 Library with Android code base for MVVM architecture with DataBinding.
 

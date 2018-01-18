@@ -1,11 +1,11 @@
 # ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#)  [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) 
 
-Library with Android code base for MVVM architecture with DataBinding.
+Library with Android code base for MVVM architecture with DataBinding and Dagger2 for dependency injection.
 
 ## Installation
 
 #### Download
-[ ![Download](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
+Latest version [ ![Latest version](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
 
 #### Gradle
 
@@ -42,7 +42,33 @@ implementation 'net.anapsil.android.mvvm:library:0.1.0'
     <version>0.1.0</version>
 </dependency>
 ```
+## How to use
 
+#### Dependency injection
+Create your AppComponent class and add **@Component** annotation and set the modules AndroidSupportInjectionModule and AppModule.
+Also include your application modules.
+
+```java
+@Singleton
+@Component(modules = {AndroidSupportInjectionModule.class, AppModule.class})
+public interface AppComponent extends AndroidInjector<DemoApplication> {
+
+    @Component.Builder
+    abstract class Builder extends AndroidInjector.Builder<DemoApplication> {
+    }
+}
+```
+#### Application
+Create your custom application extending net.anapsil.mvvmbase.App.class.
+
+```java
+public class DemoApplication extends App {
+    @Override
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return DaggerAppComponent.builder().create(this);
+    }
+}
+```
 License
 -------
 

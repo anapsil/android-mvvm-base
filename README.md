@@ -20,7 +20,7 @@ allprojects {
 
 * Add the dependency:
 ```groovy
-implementation 'net.anapsil:android-mvvm-base:0.1.0'
+implementation 'net.anapsil.android.mvvm:library:0.1.0'
 ```
 
 #### Maven

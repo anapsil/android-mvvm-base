@@ -1,6 +1,24 @@
-# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#)
+# ANDROID MVVM BASE [![Build Status](https://www.bitrise.io/app/d2294837d63eb335/status.svg?token=caesXeFNDW63wtFf-9tw_w&branch=master)](https://www.bitrise.io/app/d2294837d63eb335#) [ ![Download](https://api.bintray.com/packages/anapsil83/maven-android/android-mvvm-base/images/download.svg) ](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion)
 
 Library with Android code base for MVVM architecture with DataBinding.
+
+## Download
+
+Download [the latest AAR](https://bintray.com/anapsil83/maven-android/android-mvvm-base/_latestVersion) or grab via Maven:
+
+```xml
+<dependency>
+  <groupId>net.anapsil</groupId>
+  <artifactId>android-mvvm-base</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
+or Gradle:
+
+```groovy
+implementation 'net.anapsil:android-mvvm-base:0.1.0'
+```
 
 License
 -------

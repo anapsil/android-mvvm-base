@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven-android'
+    bintrayName = 'android-mvvm-base'
+
+    publishedGroupId = 'net.anapsil'
+    libraryName = 'MVVM Base'
+    artifact = 'android-mvvm-base'
+
+    libraryDescription = 'Android code base for MVVM architecture with DataBinding'
+
+    siteUrl = 'https://github.com/anapsil/android-mvvm-base'
+    gitUrl = 'https://github.com/anapsil/android-mvvm-base.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'anapsil83'
+    developerName = 'Ana Paula da Silva'
+    developerEmail = 'anapsil83@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -54,4 +78,5 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
 }
 
-apply from: 'publish.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

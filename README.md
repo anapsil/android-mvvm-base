@@ -37,9 +37,9 @@ implementation 'net.anapsil.android.mvvm:library:0.1.0'
 * Add the dependency in the form
 ```xml
 <dependency>
-  <groupId>net.anapsil</groupId>
-  <artifactId>android-mvvm-base</artifactId>
-  <version>0.1.0</version>
+    <groupId>net.anapsil.android.mvvm</groupId>
+    <artifactId>library</artifactId>
+    <version>0.1.0</version>
 </dependency>
 ```
 

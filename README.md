@@ -8,37 +8,17 @@ Library with Android code base for MVVM architecture with DataBinding and Dagger
 
 #### Gradle
 
-* Add it in your root build.gradle:
-```groovy 
-allprojects {
-   repositories {
-       maven { url  "https://dl.bintray.com/anapsil83/maven-android" }
-   }
-}
-``` 
-
-* Add the dependency:
 ```groovy
-implementation 'net.anapsil.android.mvvm:library:0.1.0'
+implementation 'net.anapsil.android.mvvm:library:0.1.1'
 ```
 
 #### Maven
 
-* Add the bintray repository to your maven file:
-
-```xml
-<repository>
-    <id>bintray-anapsil83-maven-android</id>
-    <url>https://dl.bintray.com/anapsil83/maven-android</url>
-</repository>
-```
-
-* Add the dependency in the form
 ```xml
 <dependency>
     <groupId>net.anapsil.android.mvvm</groupId>
     <artifactId>library</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 </dependency>
 ```
 ## How to use

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">AndroidMvvmBase</string>
+    <string name="app_name">Marvel Demo</string>
+    <string name="marvel">Marvel</string>
+
+    <string name="favorite_on">Favorite on</string>
+    <string name="favorite_off">Favorite off</string>
 </resources>

@@ -1,5 +1,29 @@
 apply plugin: 'com.android.application'
 
+Properties getProperties() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties
+}
+
+String getApiKey() {
+    try {
+        return getProperties().getProperty('marvel.apikey')
+    } catch (Exception ignored) {
+    }
+
+    return System.getenv("MARVEL_API_KEY")
+}
+
+String getPrivateKey() {
+    try {
+        return getProperties().getProperty('marvel.privateKey')
+    } catch (Exception ignored) {
+    }
+
+    return System.getenv("MARVEL_PRIVATE_KEY")
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -9,8 +33,18 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MARVEL_API_KEY", "\"${getApiKey()}\""
+        buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"${getPrivateKey()}\""
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false

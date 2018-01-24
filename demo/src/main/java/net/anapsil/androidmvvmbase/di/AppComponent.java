@@ -2,8 +2,7 @@ package net.anapsil.androidmvvmbase.di;
 
 import net.anapsil.androidmvvmbase.DemoApplication;
 import net.anapsil.androidmvvmbase.di.modules.ActivityBuilder;
-import net.anapsil.androidmvvmbase.di.modules.ServiceModule;
-import net.anapsil.mvvmbase.di.AppModule;
+import net.anapsil.androidmvvmbase.di.modules.AppModule;
 
 import javax.inject.Singleton;
 
@@ -15,7 +14,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
  * Created by ana.silva on 17/01/18.
  */
 @Singleton
-@Component(modules = {AndroidSupportInjectionModule.class, AppModule.class, ServiceModule.class, ActivityBuilder.class})
+@Component(modules = {AndroidSupportInjectionModule.class, AppModule.class, ActivityBuilder.class})
 public interface AppComponent extends AndroidInjector<DemoApplication> {
 
     @Component.Builder

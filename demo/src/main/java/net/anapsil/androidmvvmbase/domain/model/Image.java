@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class Image implements Serializable {
     private String path;
     private String extension;
+    private transient String url;
 
     public String getPath() {
         return path;
@@ -24,5 +25,13 @@ public class Image implements Serializable {
 
     public void setExtension(String extension) {
         this.extension = extension;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

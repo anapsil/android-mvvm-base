@@ -3,10 +3,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="vm"
             type="net.anapsil.androidmvvmbase.ui.main.MainViewModel"/>
+
+        <import type="net.anapsil.mvvmbase.ui.viewmodels.RxBaseViewModel.Status"/>
+
+        <import type="android.view.View"/>
     </data>
+
     <android.support.design.widget.CoordinatorLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -19,8 +25,8 @@
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
                 android:contentDescription="@string/marvel"
+                android:padding="8dp"
                 app:srcCompat="@drawable/logo_marvel"/>
 
             <android.support.v7.widget.Toolbar
@@ -34,9 +40,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
+            android:visibility="@{vm.status.equals(Status.SUCCESS) ? View.VISIBLE : View.GONE}"
             app:layoutManager="android.support.v7.widget.GridLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:spanCount="3"
             tools:listitem="@layout/item_character"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{vm.status.equals(Status.LOADING) ? View.VISIBLE : View.GONE}"/>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

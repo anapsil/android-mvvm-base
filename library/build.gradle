@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/anapsil/android-mvvm-base'
     gitUrl = 'https://github.com/anapsil/android-mvvm-base.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.1.1'
 
     developerId = 'anapsil83'
     developerName = 'Ana Paula da Silva'
@@ -31,7 +31,7 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 2
         versionName libraryVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -69,6 +69,9 @@ dependencies {
     api "com.squareup.okhttp3:okhttp:$okhttpVersion"
     api "com.squareup.okhttp3:okhttp-urlconnection:$okhttpVersion"
     api "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    api "com.squareup.picasso:picasso:$picassoVersion"
+
+    api "com.jakewharton.picasso:picasso2-okhttp3-downloader:$okDownloaderVersion"
 
     api "com.google.dagger:dagger-android:$dagger2Version"
     api "com.google.dagger:dagger-android-support:$dagger2Version"

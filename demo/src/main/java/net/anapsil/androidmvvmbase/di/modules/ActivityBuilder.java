@@ -1,6 +1,7 @@
 package net.anapsil.androidmvvmbase.di.modules;
 
 import net.anapsil.androidmvvmbase.ui.main.MainActivity;
+import net.anapsil.androidmvvmbase.ui.main.MainActivityModule;
 import net.anapsil.mvvmbase.di.scopes.PerActivity;
 
 import dagger.Module;
@@ -13,6 +14,6 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class ActivityBuilder {
 
     @PerActivity
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector(modules = {MainActivityModule.class})
     abstract MainActivity mainActivity();
 }

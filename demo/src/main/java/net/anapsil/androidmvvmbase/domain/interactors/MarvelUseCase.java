@@ -1,6 +1,7 @@
 package net.anapsil.androidmvvmbase.domain.interactors;
 
 import net.anapsil.androidmvvmbase.BuildConfig;
+import net.anapsil.androidmvvmbase.domain.model.Image;
 import net.anapsil.mvvmbase.utils.StringUtils;
 
 import java.io.Serializable;
@@ -12,6 +13,9 @@ import java.util.Calendar;
  */
 
 public abstract class MarvelUseCase<D extends Serializable, R> implements UseCase<D> {
+    private final char SLASH = '/';
+    private final char DOT = '.';
+
     String timestamp;
     R repository;
 
@@ -29,5 +33,23 @@ public abstract class MarvelUseCase<D extends Serializable, R> implements UseCas
         }
 
         return "";
+    }
+
+    protected String generateImageUrl(Image image) {
+        return generateImageUrl(image, 0, 0);
+    }
+
+    protected String generateImageUrl(Image image, float density, int orientation) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(image.getPath())
+                .append(SLASH)
+                .append(getImageVariants(density, orientation))
+                .append(DOT)
+                .append(image.getExtension());
+        return sb.toString();
+    }
+
+    private String getImageVariants(float density, int orientation) {
+        return null;
     }
 }

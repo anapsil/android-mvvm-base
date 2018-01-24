@@ -4,6 +4,8 @@ import net.anapsil.androidmvvmbase.BuildConfig;
 import net.anapsil.androidmvvmbase.domain.MarvelApi;
 import net.anapsil.androidmvvmbase.domain.model.Character;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
@@ -14,6 +16,7 @@ import io.reactivex.Single;
 public class CharactersRepository {
     private MarvelApi api;
 
+    @Inject
     public CharactersRepository(MarvelApi api) {
         this.api = api;
     }

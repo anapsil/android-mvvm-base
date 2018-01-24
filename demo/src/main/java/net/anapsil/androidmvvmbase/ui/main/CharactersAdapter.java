@@ -1,12 +1,17 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import net.anapsil.androidmvvmbase.R;
 import net.anapsil.androidmvvmbase.domain.model.Character;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by ana.silva on 19/01/18.
@@ -15,6 +20,7 @@ import java.util.List;
 public class CharactersAdapter extends RecyclerView.Adapter<CharacterViewHolder> {
     private List<Character> characters;
 
+    @Inject
     public CharactersAdapter() {
         characters = new ArrayList<>();
     }
@@ -26,12 +32,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharacterViewHolder>
 
     @Override
     public CharacterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_character, parent, false);
+        return new CharacterViewHolder(view, new CharacterItemViewModel(null, null));
     }
 
     @Override
     public void onBindViewHolder(CharacterViewHolder holder, int position) {
-
+        holder.getViewModel().update(characters.get(position));
+        holder.executePendingBindings();
     }
 
     @Override

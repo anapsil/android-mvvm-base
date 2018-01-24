@@ -38,6 +38,8 @@ ext {
     dagger2Version = "2.14.1"
     retrofitVersion = "2.3.0"
     okhttpVersion = "3.8.1"
+    picassoVersion = "2.5.2"
+    okDownloaderVersion = "1.1.0"
 
     //Test dependencies
     junitVersion = "4.12"

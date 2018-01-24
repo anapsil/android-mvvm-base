@@ -3,6 +3,8 @@ package net.anapsil.androidmvvmbase.domain.interactors;
 import net.anapsil.androidmvvmbase.domain.model.Character;
 import net.anapsil.androidmvvmbase.repo.CharactersRepository;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
@@ -12,6 +14,7 @@ import io.reactivex.Single;
 
 public class LoadCharacterByIdUseCase extends MarvelUseCase<Character, CharactersRepository> {
 
+    @Inject
     public LoadCharacterByIdUseCase(CharactersRepository repository) {
         super(repository);
     }

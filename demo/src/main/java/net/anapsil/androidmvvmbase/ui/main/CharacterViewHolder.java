@@ -10,12 +10,16 @@ import net.anapsil.mvvmbase.ui.viewmodels.BaseItemViewModel;
  */
 
 public class CharacterViewHolder extends BaseViewHolder {
-    public CharacterViewHolder(View itemView) {
+
+    CharacterItemViewModel characterItemViewModel;
+
+    public CharacterViewHolder(View itemView, CharacterItemViewModel characterItemViewModel) {
         super(itemView);
+        this.characterItemViewModel = characterItemViewModel;
     }
 
     @Override
     public BaseItemViewModel getViewModel() {
-        return null;
+        return characterItemViewModel;
     }
 }

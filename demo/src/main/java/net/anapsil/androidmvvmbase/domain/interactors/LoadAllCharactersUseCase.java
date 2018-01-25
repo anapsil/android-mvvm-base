@@ -23,7 +23,7 @@ public class LoadAllCharactersUseCase extends MarvelUseCase<Character, Character
         return execute(0, 0);
     }
 
-    public Observable<Character> execute(float density, int orientation) {
+    public Observable<Character> execute(int density, int orientation) {
         return repository.getCharacters(timestamp, generateHash(timestamp))
                 .map(character -> {
                     character.getThumbnail().setUrl(generateImageUrl(character.getThumbnail(), density, orientation));

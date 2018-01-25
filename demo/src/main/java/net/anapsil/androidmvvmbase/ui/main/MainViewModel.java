@@ -46,12 +46,12 @@ public class MainViewModel extends RxBaseViewModel {
                 .doOnSubscribe(__ -> status.set(Status.LOADING))
                 .doOnComplete(() -> status.set(Status.SUCCESS))
                 .doOnError(throwable -> status.set(Status.ERROR))
-                .subscribe(character -> adapter.addCharacter(character)));
+                .subscribe(character -> adapter.addCharacter(character), Throwable::printStackTrace));
     }
 
-    private float getScreenDensity() {
+    private int getScreenDensity() {
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        return metrics.density;
+        return (int) metrics.scaledDensity;
     }
 
     private int getScreenOrientation() {

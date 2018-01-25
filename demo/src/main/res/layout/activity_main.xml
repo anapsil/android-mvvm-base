@@ -46,6 +46,29 @@
             app:spanCount="3"
             tools:listitem="@layout/item_character"/>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{vm.status.equals(Status.ERROR) ? View.VISIBLE : View.GONE}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="80dp"
+                android:alpha="0.7"
+                android:src="@drawable/img_error"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:text="Ops, something got wrong!"
+                android:textStyle="bold"/>
+        </FrameLayout>
+
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

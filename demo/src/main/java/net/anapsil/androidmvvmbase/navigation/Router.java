@@ -31,6 +31,7 @@ public class Router extends AppRouter<Router.Routes> {
     }
 
     public enum Routes {
-
+        MAIN,
+        DETAILS
     }
 }

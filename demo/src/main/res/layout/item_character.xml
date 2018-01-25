@@ -21,6 +21,7 @@
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             app:imageUrl="@{vm.thumb}"
+            app:placeholder="@{@drawable/img_placeholder}"
             tools:src="@drawable/img_placeholder"/>
 
         <android.support.v7.widget.AppCompatImageView

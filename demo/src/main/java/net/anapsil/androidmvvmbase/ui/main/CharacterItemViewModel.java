@@ -33,7 +33,7 @@ public class CharacterItemViewModel extends BaseViewModel implements BaseItemVie
     @Override
     public void update(Character item) {
         name.set(item.getName());
-        thumb.set(item.getThumbnail().getPath());
+        thumb.set(item.getThumbnail().getUrl());
         notifyChange();
     }
 }

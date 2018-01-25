@@ -1,8 +1,10 @@
 package net.anapsil.mvvmbase.navigation;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Parcelable;
 import android.support.annotation.IdRes;
 
@@ -11,11 +13,11 @@ import android.support.annotation.IdRes;
  */
 
 public abstract class AppRouter<E extends Enum> {
+    public static final String EXTRA_ARGS = "extra_args";
+    private Activity activity;
 
-    private FragmentManager fragmentManager;
-
-    public AppRouter(FragmentManager fragmentManager) {
-        this.fragmentManager = fragmentManager;
+    public AppRouter(Activity activity) {
+        this.activity = activity;
     }
 
     public abstract void navigate(E route, Parcelable... args);
@@ -25,8 +27,16 @@ public abstract class AppRouter<E extends Enum> {
     public abstract @IdRes
     int getContainerViewId();
 
-    private void addFragment(Fragment fragment, String tag, boolean addToStack) {
-        FragmentTransaction ft = fragmentManager.beginTransaction();
+    protected void startActivity(Class clazz, Parcelable... args) {
+        Intent intent = new Intent(activity, clazz);
+        if (args != null) {
+            intent.putExtra(EXTRA_ARGS, args);
+        }
+        activity.startActivity(intent);
+    }
+
+    protected void addFragment(Fragment fragment, String tag, boolean addToStack) {
+        FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
         ft.add(getContainerViewId(), fragment, fragment.getClass().getSimpleName());
         if (addToStack) {
             ft.addToBackStack(tag);
@@ -34,7 +44,7 @@ public abstract class AppRouter<E extends Enum> {
         ft.commit();
     }
 
-    private void popBackStack(String name) {
-        fragmentManager.popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    protected void popBackStack(String name) {
+        activity.getFragmentManager().popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 }

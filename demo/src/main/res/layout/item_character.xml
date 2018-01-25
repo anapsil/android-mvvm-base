@@ -13,7 +13,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:onClick="@{vm::onItemClick}">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/thumbnail"
@@ -22,7 +23,7 @@
             android:scaleType="centerCrop"
             app:imageUrl="@{vm.thumb}"
             app:placeholder="@{@drawable/img_placeholder}"
-            tools:src="@drawable/img_placeholder"/>
+            tools:src="@tools:sample/avatars"/>
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/favorite"
@@ -41,6 +42,6 @@
             android:gravity="center_horizontal|bottom"
             android:padding="8dp"
             app:binding="@{vm.name}"
-            tools:text="Hulk"/>
+            tools:text="@tools:sample/first_names"/>
     </FrameLayout>
 </layout>

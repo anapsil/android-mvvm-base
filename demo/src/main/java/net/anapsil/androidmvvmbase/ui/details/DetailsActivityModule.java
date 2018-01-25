@@ -1,7 +1,6 @@
-package net.anapsil.androidmvvmbase.ui.main;
+package net.anapsil.androidmvvmbase.ui.details;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 
 import net.anapsil.androidmvvmbase.navigation.Router;
 import net.anapsil.mvvmbase.di.scopes.PerActivity;
@@ -15,13 +14,7 @@ import dagger.Provides;
  * Created by ana.silva on 10/01/18.
  */
 @Module
-public abstract class MainActivityModule {
-
-    @PerActivity
-    @Provides
-    static FragmentManager provideFragmentManager(Activity activity) {
-        return activity.getFragmentManager();
-    }
+public abstract class DetailsActivityModule {
 
     @PerActivity
     @Provides
@@ -30,5 +23,5 @@ public abstract class MainActivityModule {
     }
 
     @Binds
-    abstract Activity bindActivity(MainActivity mainActivity);
+    abstract Activity bindActivity(DetailsActivity detailsActivity);
 }

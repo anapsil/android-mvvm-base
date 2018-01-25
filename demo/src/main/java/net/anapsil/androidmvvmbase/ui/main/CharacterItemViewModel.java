@@ -11,6 +11,8 @@ import net.anapsil.mvvmbase.navigation.AppRouter;
 import net.anapsil.mvvmbase.ui.viewmodels.BaseItemViewModel;
 import net.anapsil.mvvmbase.ui.viewmodels.BaseViewModel;
 
+import static net.anapsil.androidmvvmbase.navigation.Router.Routes.DETAILS;
+
 /**
  * Created by ana.silva on 22/01/18.
  */
@@ -18,8 +20,9 @@ import net.anapsil.mvvmbase.ui.viewmodels.BaseViewModel;
 public class CharacterItemViewModel extends BaseViewModel implements BaseItemViewModel<Character> {
     public ObservableString name = new ObservableString();
     public ObservableString thumb = new ObservableString();
-
     public ObservableBoolean favorite = new ObservableBoolean();
+
+    private Character character;
 
     public CharacterItemViewModel(Resources resources, AppRouter router) {
         super(resources, router);
@@ -27,13 +30,14 @@ public class CharacterItemViewModel extends BaseViewModel implements BaseItemVie
 
     @Override
     public void onItemClick(View v) {
-
+        router.navigate(DETAILS, character);
     }
 
     @Override
     public void update(Character item) {
         name.set(item.getName());
         thumb.set(item.getThumbnail().getUrl());
+        character = item;
         notifyChange();
     }
 }

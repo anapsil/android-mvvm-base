@@ -1,5 +1,6 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.view.ViewGroup;
 
 import net.anapsil.androidmvvmbase.R;
 import net.anapsil.androidmvvmbase.domain.model.Character;
+import net.anapsil.androidmvvmbase.navigation.Router;
+import net.anapsil.mvvmbase.navigation.AppRouter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +22,14 @@ import javax.inject.Inject;
 
 public class CharactersAdapter extends RecyclerView.Adapter<CharacterViewHolder> {
     private List<Character> characters;
+    private Resources resources;
+    private Router router;
 
     @Inject
-    public CharactersAdapter() {
+    public CharactersAdapter(Resources resources, AppRouter router) {
         characters = new ArrayList<>();
+        this.resources = resources;
+        this.router = (Router) router;
     }
 
     public void addCharacter(Character character) {
@@ -33,7 +40,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharacterViewHolder>
     @Override
     public CharacterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_character, parent, false);
-        return new CharacterViewHolder(view, new CharacterItemViewModel(null, null));
+        return new CharacterViewHolder(view, new CharacterItemViewModel(resources, router));
     }
 
     @Override

@@ -1,8 +1,9 @@
 package net.anapsil.androidmvvmbase.navigation;
 
-import android.app.FragmentManager;
+import android.app.Activity;
 import android.os.Parcelable;
 
+import net.anapsil.androidmvvmbase.ui.details.DetailsActivity;
 import net.anapsil.mvvmbase.navigation.AppRouter;
 
 /**
@@ -11,18 +12,24 @@ import net.anapsil.mvvmbase.navigation.AppRouter;
 
 public class Router extends AppRouter<Router.Routes> {
 
-    public Router(FragmentManager fragmentManager) {
-        super(fragmentManager);
+    public Router(Activity activity) {
+        super(activity);
     }
 
     @Override
     public void navigate(Routes route, Parcelable... args) {
-
+        navigate(route, false, args);
     }
 
     @Override
     public void navigate(Routes route, boolean addToBackStack, Parcelable... args) {
-
+        switch (route) {
+            case MAIN:
+                break;
+            case DETAILS:
+                startActivity(DetailsActivity.class, args);
+                break;
+        }
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.anapsil.mvvmbase.di;
 
 import android.app.Application;
 import android.content.res.Resources;
+import android.util.Log;
 
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
@@ -68,6 +69,7 @@ public abstract class BaseModule {
     @Provides
     protected static Picasso providePicasso(Application application, OkHttp3Downloader downloader) {
         return new Picasso.Builder(application.getApplicationContext())
+                .listener(((picasso, uri, exception) -> Log.e(picasso.getClass().getSimpleName(), exception.getMessage() + "-" + uri.getPath())))
                 .downloader(downloader)
                 .build();
     }

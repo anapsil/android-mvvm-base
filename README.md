@@ -94,8 +94,8 @@ public class DemoApplication extends App {
 
 ## Next Steps
 
-* Add Kotlin support
 * Add Android Architecture Components (LiveData and ViewModel)
+* Add Kotlin support
 
 License
 -------

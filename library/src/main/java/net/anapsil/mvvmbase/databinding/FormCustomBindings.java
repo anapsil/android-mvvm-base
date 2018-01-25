@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextWatcher;
 import android.util.Pair;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,7 +43,7 @@ public class FormCustomBindings {
     }
 
     @BindingAdapter("cb_text")
-    public static void bindCheckBoxText(CheckBox cb, ObservableString text) {
+    public static void bindCompoundButtonText(CompoundButton cb, ObservableString text) {
         cb.setText(text.get());
     }
 

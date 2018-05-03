@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
 
@@ -32,7 +32,7 @@ ext {
     compileSdkVersion = 27
 
     // App dependencies
-    supportLibraryVersion = "27.0.2"
+    supportLibraryVersion = "27.1.1"
     rxandroid2Version = "2.0.1"
     rxjava2Version = "2.1.8"
     dagger2Version = "2.14.1"

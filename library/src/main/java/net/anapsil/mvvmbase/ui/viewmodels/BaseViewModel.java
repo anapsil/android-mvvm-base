@@ -1,11 +1,11 @@
 package net.anapsil.mvvmbase.ui.viewmodels;
 
+import android.arch.lifecycle.ViewModel;
 import android.content.res.Resources;
-import android.databinding.BaseObservable;
 
 import net.anapsil.mvvmbase.navigation.AppRouter;
 
-public class BaseViewModel extends BaseObservable {
+public class BaseViewModel extends ViewModel {
     protected Resources resources;
     protected AppRouter router;
 

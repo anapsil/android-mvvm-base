@@ -38,6 +38,5 @@ public class CharacterItemViewModel extends BaseViewModel implements BaseItemVie
         name.set(item.getName());
         thumb.set(item.getThumbnail().getUrl());
         character = item;
-        notifyChange();
     }
 }

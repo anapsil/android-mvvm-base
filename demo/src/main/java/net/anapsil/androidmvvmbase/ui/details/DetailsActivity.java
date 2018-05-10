@@ -21,8 +21,6 @@ public class DetailsActivity extends BaseActivity<ActivityDetailsBinding, Detail
     @Inject
     DetailsViewModel detailsViewModel;
 
-    private Character character;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +28,11 @@ public class DetailsActivity extends BaseActivity<ActivityDetailsBinding, Detail
         setSupportActionBar(getViewDataBinding().toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getViewDataBinding().collapsingToolbar.setTitle(character.getName());
     }
 
     private void handleIntent() {
-        character = (Character) getIntent().getParcelableArrayExtra(Router.EXTRA_ARGS)[0];
+        Character character = (Character) getIntent().getParcelableArrayExtra(Router.EXTRA_ARGS)[0];
+        getViewDataBinding().collapsingToolbar.setTitle(character.getName());
         getViewModel().setCharacter(character);
     }
 

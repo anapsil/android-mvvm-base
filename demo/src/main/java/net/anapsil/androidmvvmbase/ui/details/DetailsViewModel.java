@@ -1,6 +1,7 @@
 package net.anapsil.androidmvvmbase.ui.details;
 
 import android.content.res.Resources;
+import android.text.TextUtils;
 
 import net.anapsil.androidmvvmbase.domain.model.Character;
 import net.anapsil.mvvmbase.databinding.ObservableString;
@@ -19,6 +20,7 @@ import io.reactivex.Scheduler;
 @PerActivity
 public class DetailsViewModel extends RxBaseViewModel {
     public ObservableString image = new ObservableString();
+    public ObservableString description = new ObservableString();
 
     private Character character;
 
@@ -36,5 +38,6 @@ public class DetailsViewModel extends RxBaseViewModel {
         super.onViewCreated();
 
         image.set(character.getThumbnail().getPath() + "." + character.getThumbnail().getExtension());
+        description.set(TextUtils.isEmpty(character.getDescription()) ? "No description provided" : character.getDescription());
     }
 }

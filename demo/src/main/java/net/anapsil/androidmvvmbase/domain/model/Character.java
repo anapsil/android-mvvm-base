@@ -24,6 +24,7 @@ public class Character implements Serializable, Parcelable {
     private int id;
     private String name;
     private Image thumbnail;
+    private String description;
 
     public Character() {
     }
@@ -32,6 +33,7 @@ public class Character implements Serializable, Parcelable {
         this.id = in.readInt();
         this.name = in.readString();
         this.thumbnail = (Image) in.readSerializable();
+        this.description = in.readString();
     }
 
     public int getId() {
@@ -58,6 +60,14 @@ public class Character implements Serializable, Parcelable {
         this.thumbnail = thumbnail;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -68,5 +78,6 @@ public class Character implements Serializable, Parcelable {
         dest.writeInt(this.id);
         dest.writeString(this.name);
         dest.writeSerializable(this.thumbnail);
+        dest.writeString(this.description);
     }
 }

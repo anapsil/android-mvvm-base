@@ -4,9 +4,10 @@ import net.anapsil.androidmvvmbase.BuildConfig;
 import net.anapsil.androidmvvmbase.domain.MarvelApi;
 import net.anapsil.androidmvvmbase.domain.model.Character;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
-import io.reactivex.Observable;
 import io.reactivex.Single;
 
 /**
@@ -21,9 +22,9 @@ public class CharactersRepository {
         this.api = api;
     }
 
-    public Observable<Character> getCharacters(String timestamp, String hash) {
+    public Single<List<Character>> getCharacters(String timestamp, String hash) {
         return api.getCharacters(BuildConfig.MARVEL_API_KEY, timestamp, hash)
-                .flatMapObservable(response -> Observable.fromIterable(response.getData().getResults()));
+                .flatMap(response -> Single.just(response.getData().getResults()));
     }
 
     public Single<Character> getCharactersById(String timestamp, String hash, int id) {

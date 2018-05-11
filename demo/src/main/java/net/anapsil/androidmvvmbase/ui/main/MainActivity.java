@@ -17,13 +17,17 @@ import javax.inject.Inject;
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
     @Inject
     MainViewModel mainViewModel;
+    @Inject
+    CharactersAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getViewDataBinding().charactersList.setHasFixedSize(true);
-        getViewDataBinding().charactersList.setAdapter(getViewModel().getAdapter());
+        getViewDataBinding().charactersList.setAdapter(adapter);
+
+        mainViewModel.getCharacters().observe(this, characters -> adapter.addCharacters(characters));
     }
 
     @Override

@@ -61,11 +61,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":library")
 
+    implementation "android.arch.navigation:navigation-fragment:$navigationVersion"
+    implementation "android.arch.navigation:navigation-ui:$navigationVersion"
+
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
 
     testImplementation 'junit:junit:4.12'
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+
     androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation "android.arch.navigation:navigation-testing:$navigationVersion"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation "com.android.support:support-annotations:$supportLibraryVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion", {
@@ -87,5 +95,6 @@ dependencies {
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
     }
 
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
 }

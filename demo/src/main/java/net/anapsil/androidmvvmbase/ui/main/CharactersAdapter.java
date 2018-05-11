@@ -32,8 +32,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharacterViewHolder>
         this.router = (Router) router;
     }
 
-    public void addCharacter(Character character) {
-        characters.add(character);
+    public void addCharacters(List<Character> characters) {
+        this.characters = characters;
         notifyDataSetChanged();
     }
 

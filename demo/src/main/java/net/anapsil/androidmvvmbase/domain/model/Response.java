@@ -1,5 +1,7 @@
 package net.anapsil.androidmvvmbase.domain.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 
 /**
@@ -7,9 +9,13 @@ import java.io.Serializable;
  */
 
 public class Response implements Serializable {
+    @Expose
     private int code;
+    @Expose
     private String status;
+    @Expose
     private String attributionText;
+    @Expose
     private Data data;
 
     public int getCode() {

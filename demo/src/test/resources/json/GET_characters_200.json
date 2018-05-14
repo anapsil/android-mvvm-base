@@ -4,7 +4,7 @@
   "copyright": "© 2018 MARVEL",
   "attributionText": "Data provided by Marvel. © 2018 MARVEL",
   "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2018 MARVEL</a>",
-  "etag": "0f452956936ee362e939f00970b3e19746ee32d0",
+  "etag": "3f388100a5f2e81d9514a2e73c143be8eb1a31c0",
   "data": {
     "offset": 0,
     "limit": 20,
@@ -216,7 +216,7 @@
         "urls": [
           {
             "type": "detail",
-            "url": "http://marvel.com/comics/characters/1011334/3-d_man?utm_campaign=apiRef&utm_source=816cd99cb7dd3773042e097cf873d979"
+            "url": "http://marvel.com/characters/74/3-d_man?utm_campaign=apiRef&utm_source=816cd99cb7dd3773042e097cf873d979"
           },
           {
             "type": "wiki",
@@ -409,12 +409,12 @@
               "name": "Avengers Vol. II: Red Zone (2003)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
-              "name": "Captain America (1968 - 1996)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1997",
               "name": "Captain America (1998 - 2002)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
+              "name": "Captain America (1968 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23810",
@@ -1351,7 +1351,7 @@
         "urls": [
           {
             "type": "detail",
-            "url": "http://marvel.com/characters/84/absorbing_man?utm_campaign=apiRef&utm_source=816cd99cb7dd3773042e097cf873d979"
+            "url": "http://marvel.com/comics/characters/1009148/absorbing_man?utm_campaign=apiRef&utm_source=816cd99cb7dd3773042e097cf873d979"
           },
           {
             "type": "wiki",
@@ -1814,12 +1814,12 @@
               "name": "Infinity Countdown: Adam Warlock (2018)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/6673",
-              "name": "Infinity Crusade (1993)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/24051",
               "name": "Infinity Crusade (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/6673",
+              "name": "Infinity Crusade (1993)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/6449",
@@ -2743,12 +2743,12 @@
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011198/comics",
           "items": [
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/23659",
-              "name": "Agents of Atlas (2009) #1"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/4801",
               "name": "Agents of Atlas (2006) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/23659",
+              "name": "Agents of Atlas (2009) #1"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/23660",
@@ -2763,12 +2763,12 @@
               "name": "Agents of Atlas (2009) #2"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/27402",
-              "name": "Agents of Atlas (2009) #2 (BACHALO 2ND PRINTING VARIANT)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/23824",
               "name": "Agents of Atlas (2009) #2 (MCGUINNESS VARIANT)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/27402",
+              "name": "Agents of Atlas (2009) #2 (BACHALO 2ND PRINTING VARIANT)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/5241",
@@ -2787,32 +2787,32 @@
               "name": "Agents of Atlas (2009) #3 (Wolverine Art Appreciation Variant)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/24219",
-              "name": "Agents of Atlas (2009) #4"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/5404",
               "name": "Agents of Atlas (2006) #4"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/24221",
-              "name": "Agents of Atlas (2009) #5"
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/24219",
+              "name": "Agents of Atlas (2009) #4"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/5665",
               "name": "Agents of Atlas (2006) #5"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/24221",
+              "name": "Agents of Atlas (2009) #5"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/24222",
               "name": "Agents of Atlas (2009) #5 (MCGUINNESS VARIANT)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5842",
-              "name": "Agents of Atlas (2006) #6"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/24360",
               "name": "Agents of Atlas (2009) #6"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5842",
+              "name": "Agents of Atlas (2006) #6"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/24361",

@@ -26,11 +26,11 @@ ext {
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion rootProject.ext.minVersion
+        targetSdkVersion rootProject.ext.targetVersion
         versionCode 2
         versionName libraryVersion
 
@@ -76,6 +76,8 @@ dependencies {
     api "com.squareup.picasso:picasso:$picassoVersion"
 
     api "com.jakewharton.picasso:picasso2-okhttp3-downloader:$okDownloaderVersion"
+
+    api 'com.google.code.gson:gson:2.8.4'
 
     api "com.google.dagger:dagger-android:$dagger2Version"
     api "com.google.dagger:dagger-android-support:$dagger2Version"

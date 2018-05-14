@@ -25,12 +25,12 @@ String getPrivateKey() {
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
         applicationId "net.anapsil.androidmvvmbase"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion rootProject.ext.minVersion
+        targetSdkVersion rootProject.ext.targetVersion
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true

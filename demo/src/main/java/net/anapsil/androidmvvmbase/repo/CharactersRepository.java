@@ -28,7 +28,7 @@ public class CharactersRepository {
     }
 
     public Single<Character> getCharactersById(String timestamp, String hash, int id) {
-        return api.getCharactersById(BuildConfig.MARVEL_API_KEY, timestamp, hash, id)
+        return api.getCharactersById(id, BuildConfig.MARVEL_API_KEY, timestamp, hash)
                 .map(response -> response.getData().getResults().get(0));
     }
 }

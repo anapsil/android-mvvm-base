@@ -19,8 +19,8 @@ public interface MarvelApi {
                                           @Query("hash") String hash);
 
     @GET("v1/public/characters/{characterId}")
-    public Single<Response> getCharactersById(@Query("apikey") String apiKey,
+    public Single<Response> getCharactersById(@Path("characterId") int characterId,
+                                              @Query("apikey") String apiKey,
                                               @Query("ts") String timestamp,
-                                              @Query("hash") String hash,
-                                              @Path("characterId") int characterId);
+                                              @Query("hash") String hash);
 }

@@ -80,4 +80,13 @@ public class Character implements Serializable, Parcelable {
         dest.writeSerializable(this.thumbnail);
         dest.writeString(this.description);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Character) {
+            return id == ((Character) obj).id;
+        } else {
+            return false;
+        }
+    }
 }

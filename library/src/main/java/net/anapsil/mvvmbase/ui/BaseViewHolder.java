@@ -1,12 +1,13 @@
 package net.anapsil.mvvmbase.ui;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import net.anapsil.mvvmbase.ui.viewmodels.BaseItemViewModel;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseViewHolder<B extends ViewDataBinding, VM extends BaseItemViewModel> extends RecyclerView.ViewHolder {
 

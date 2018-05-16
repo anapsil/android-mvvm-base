@@ -1,9 +1,10 @@
 package net.anapsil.mvvmbase.ui.viewmodels;
 
-import android.arch.lifecycle.ViewModel;
 import android.content.res.Resources;
 
 import net.anapsil.mvvmbase.navigation.AppRouter;
+
+import androidx.lifecycle.ViewModel;
 
 public class BaseViewModel extends ViewModel {
     protected Resources resources;

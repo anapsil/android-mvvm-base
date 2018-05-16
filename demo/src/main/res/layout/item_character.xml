@@ -16,7 +16,7 @@
         android:layout_margin="4dp"
         android:onClick="@{vm::onItemClick}">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -25,7 +25,7 @@
             app:placeholder="@{@drawable/img_placeholder}"
             tools:src="@tools:sample/avatars"/>
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

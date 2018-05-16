@@ -1,7 +1,6 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import net.anapsil.androidmvvmbase.BR;
 import net.anapsil.androidmvvmbase.R;
@@ -9,6 +8,8 @@ import net.anapsil.androidmvvmbase.databinding.ActivityMainBinding;
 import net.anapsil.mvvmbase.ui.BaseActivity;
 
 import javax.inject.Inject;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by ana.silva on 19/01/18.

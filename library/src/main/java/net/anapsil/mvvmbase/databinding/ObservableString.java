@@ -1,6 +1,6 @@
 package net.anapsil.mvvmbase.databinding;
 
-import android.databinding.BaseObservable;
+import androidx.databinding.BaseObservable;
 
 public class ObservableString extends BaseObservable {
     String value;

@@ -1,7 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+    ext.kotlin_version = '1.2.41'
+
     repositories {
         google()
         jcenter()
@@ -10,6 +11,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.2.0-alpha14'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -26,12 +28,12 @@ task clean(type: Delete) {
 
 ext {
     // Sdk and tools
-    minVersion = 17
-    targetVersion = 27
-    compileVersion = 27
+    minVersion = 'P'
+    targetVersion = 'P'
+    compileVersion = 'android-P'
 
     // App dependencies
-    supportLibraryVersion = "27.1.1"
+    supportLibraryVersion = "1.0.0-alpha1"
     lifecycleVersion = "1.1.1"
     navigationVersion = "1.0.0-alpha01"
     rxandroid2Version = "2.0.1"
@@ -45,7 +47,7 @@ ext {
     //Test dependencies
     junitVersion = "4.12"
     mockitoVersion = "2.18.3"
-    espressoVersion = "3.0.1"
-    runnerVersion = "1.0.1"
+    espressoVersion = "3.1.0-alpha1"
+    runnerVersion = "1.1.0-alpha1"
     hamcrestVersion = "1.3"
 }

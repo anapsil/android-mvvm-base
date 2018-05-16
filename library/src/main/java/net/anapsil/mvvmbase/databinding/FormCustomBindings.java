@@ -1,6 +1,5 @@
 package net.anapsil.mvvmbase.databinding;
 
-import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
 import android.text.TextWatcher;
 import android.util.Pair;
@@ -14,6 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import net.anapsil.mvvmbase.R;
 import net.anapsil.mvvmbase.utils.TextWatcherWrapper;
+
+import androidx.databinding.BindingAdapter;
 
 public class FormCustomBindings {
 

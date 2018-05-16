@@ -1,6 +1,5 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
-import android.arch.lifecycle.MutableLiveData;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
@@ -16,6 +15,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import androidx.lifecycle.MutableLiveData;
 import io.reactivex.Scheduler;
 
 /**

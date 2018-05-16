@@ -1,7 +1,6 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
 import android.content.res.Resources;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by ana.silva on 19/01/18.

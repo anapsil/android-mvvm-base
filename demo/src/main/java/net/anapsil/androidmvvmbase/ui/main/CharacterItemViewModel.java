@@ -1,7 +1,6 @@
 package net.anapsil.androidmvvmbase.ui.main;
 
 import android.content.res.Resources;
-import android.databinding.ObservableBoolean;
 import android.view.View;
 
 import net.anapsil.androidmvvmbase.domain.model.Character;
@@ -10,6 +9,8 @@ import net.anapsil.mvvmbase.di.scopes.PerActivity;
 import net.anapsil.mvvmbase.navigation.AppRouter;
 import net.anapsil.mvvmbase.ui.viewmodels.BaseItemViewModel;
 import net.anapsil.mvvmbase.ui.viewmodels.BaseViewModel;
+
+import androidx.databinding.ObservableBoolean;
 
 import static net.anapsil.androidmvvmbase.navigation.Router.Routes.DETAILS;
 

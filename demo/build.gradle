@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 Properties getProperties() {
     Properties properties = new Properties()
@@ -34,7 +36,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "MARVEL_API_KEY", "\"${getApiKey()}\""
         buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"${getPrivateKey()}\""
@@ -61,8 +63,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":library")
 
-    implementation "android.arch.navigation:navigation-fragment:$navigationVersion"
-    implementation "android.arch.navigation:navigation-ui:$navigationVersion"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
@@ -72,29 +74,18 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
 
     androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation "android.arch.navigation:navigation-testing:$navigationVersion"
     androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation "com.android.support:support-annotations:$supportLibraryVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion", {
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'support-v13'
-        exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    }
-    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espressoVersion", {
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'animated-vector-drawable'
-        exclude group: 'com.android.support', module: 'recyclerview-v7'
-    }
-    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espressoVersion", {
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'animated-vector-drawable'
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'support-v13'
-        exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    }
+    androidTestImplementation "androidx.test:runner:$runnerVersion"
+    androidTestImplementation "androidx.annotation:annotation:$supportLibraryVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
+
 
     testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
+
+}
+repositories {
+    mavenCentral()
 }

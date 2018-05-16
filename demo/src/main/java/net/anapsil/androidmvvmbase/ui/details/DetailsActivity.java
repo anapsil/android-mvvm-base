@@ -1,7 +1,6 @@
 package net.anapsil.androidmvvmbase.ui.details;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import net.anapsil.androidmvvmbase.BR;
 import net.anapsil.androidmvvmbase.R;
@@ -11,6 +10,8 @@ import net.anapsil.androidmvvmbase.navigation.Router;
 import net.anapsil.mvvmbase.ui.BaseActivity;
 
 import javax.inject.Inject;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by ana.silva on 25/01/18.

@@ -1,10 +1,10 @@
 package net.anapsil.mvvmbase.ui.viewmodels;
 
 import android.content.res.Resources;
-import android.databinding.ObservableField;
 
 import net.anapsil.mvvmbase.navigation.AppRouter;
 
+import androidx.databinding.ObservableField;
 import io.reactivex.Scheduler;
 import io.reactivex.disposables.CompositeDisposable;
 

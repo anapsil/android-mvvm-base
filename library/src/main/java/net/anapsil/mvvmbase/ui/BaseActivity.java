@@ -1,13 +1,13 @@
 package net.anapsil.mvvmbase.ui;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
 
 import net.anapsil.mvvmbase.ui.viewmodels.BaseViewModel;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class BaseActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends DaggerAppCompatActivity {

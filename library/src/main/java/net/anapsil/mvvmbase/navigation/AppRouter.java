@@ -6,7 +6,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Parcelable;
-import android.support.annotation.IdRes;
+
+import androidx.annotation.IdRes;
 
 /**
  * Created by ana.silva on 17/01/18.

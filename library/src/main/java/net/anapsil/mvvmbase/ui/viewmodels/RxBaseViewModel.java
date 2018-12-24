@@ -1,7 +1,7 @@
 package net.anapsil.mvvmbase.ui.viewmodels;
 
 import android.content.res.Resources;
-import android.databinding.ObservableBoolean;
+import android.databinding.ObservableField;
 
 import net.anapsil.mvvmbase.navigation.AppRouter;
 
@@ -9,8 +9,7 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class RxBaseViewModel extends BaseViewModel {
-    public final ObservableBoolean isLoading = new ObservableBoolean(false);
-    public final ObservableBoolean isError = new ObservableBoolean(false);
+    public ObservableField<Status> status = new ObservableField<>();
     protected CompositeDisposable disposable;
     protected Scheduler processScheduler;
     protected Scheduler androidScheduler;
@@ -29,5 +28,11 @@ public abstract class RxBaseViewModel extends BaseViewModel {
     @Override
     public void onDestroyView() {
         disposable.dispose();
+    }
+
+    public enum Status {
+        LOADING,
+        SUCCESS,
+        ERROR
     }
 }

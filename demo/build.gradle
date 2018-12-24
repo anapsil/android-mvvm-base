@@ -1,16 +1,54 @@
 apply plugin: 'com.android.application'
 
+Properties getProperties() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties
+}
+
+String getApiKey() {
+    try {
+        return getProperties().getProperty('marvel.apikey')
+    } catch (Exception ignored) {
+    }
+
+    return System.getenv("MARVEL_API_KEY")
+}
+
+String getPrivateKey() {
+    try {
+        return getProperties().getProperty('marvel.privateKey')
+    } catch (Exception ignored) {
+    }
+
+    return System.getenv("MARVEL_PRIVATE_KEY")
+}
+
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
         applicationId "net.anapsil.androidmvvmbase"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion rootProject.ext.minVersion
+        targetSdkVersion rootProject.ext.targetVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MARVEL_API_KEY", "\"${getApiKey()}\""
+        buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"${getPrivateKey()}\""
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,11 +61,20 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":library")
 
+    implementation "android.arch.navigation:navigation-fragment:$navigationVersion"
+    implementation "android.arch.navigation:navigation-ui:$navigationVersion"
+
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
-    
+
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation "android.arch.navigation:navigation-testing:$navigationVersion"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation "com.android.support:support-annotations:$supportLibraryVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion", {
         exclude group: 'com.android.support', module: 'support-v4'
@@ -48,5 +95,6 @@ dependencies {
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
     }
 
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
 }

@@ -8,42 +8,52 @@ Library with Android code base for MVVM architecture with DataBinding and Dagger
 
 #### Gradle
 
-* Add it in your root build.gradle:
-```groovy 
-allprojects {
-   repositories {
-       maven { url  "https://dl.bintray.com/anapsil83/maven-android" }
-   }
-}
-``` 
-
-* Add the dependency:
 ```groovy
-implementation 'net.anapsil.android.mvvm:library:0.1.0'
+implementation 'net.anapsil.android.mvvm:library:0.1.1'
 ```
 
 #### Maven
 
-* Add the bintray repository to your maven file:
-
-```xml
-<repository>
-    <id>bintray-anapsil83-maven-android</id>
-    <url>https://dl.bintray.com/anapsil83/maven-android</url>
-</repository>
-```
-
-* Add the dependency in the form
 ```xml
 <dependency>
     <groupId>net.anapsil.android.mvvm</groupId>
     <artifactId>library</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 </dependency>
 ```
 ## How to use
 
 #### Dependency injection
+Create your AppModule class extending BaseModule and add **@Module** annotation. 
+Include all necessary methods to provide your dependencies.
+
+```java
+@Module
+public abstract class AppModule extends BaseModule {
+    private static final String BASE_URL = "https://gateway.marvel.com/";
+  
+    @Binds
+    abstract Application bindApplication(DemoApplication application);
+  
+    @Singleton
+    @Provides
+    static Retrofit provideRetrofit(OkHttpClient okHttpClient) {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
+  
+    @Singleton
+    @Provides
+    static MarvelApi provideApi(Retrofit retrofit) {
+        return retrofit.create(MarvelApi.class);
+    }
+}
+```
+
 Create your AppComponent class and add **@Component** annotation and set the modules AndroidSupportInjectionModule and AppModule.
 Also include your application modules.
 
@@ -51,23 +61,42 @@ Also include your application modules.
 @Singleton
 @Component(modules = {AndroidSupportInjectionModule.class, AppModule.class})
 public interface AppComponent extends AndroidInjector<DemoApplication> {
-
+  
     @Component.Builder
     abstract class Builder extends AndroidInjector.Builder<DemoApplication> {
     }
 }
 ```
+
 #### Application
 Create your custom application extending net.anapsil.mvvmbase.App.class.
 
 ```java
 public class DemoApplication extends App {
+  
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
         return DaggerAppComponent.builder().create(this);
     }
 }
 ```
+
+#### Activities
+
+
+#### Fragments
+
+
+#### Adapters
+
+
+## Testing
+
+## Next Steps
+
+* Add Android Architecture Components (LiveData and ViewModel)
+* Add Kotlin support
+
 License
 -------
 

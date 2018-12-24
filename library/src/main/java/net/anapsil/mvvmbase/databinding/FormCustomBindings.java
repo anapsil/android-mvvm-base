@@ -1,12 +1,16 @@
 package net.anapsil.mvvmbase.databinding;
 
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.text.TextWatcher;
 import android.util.Pair;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import net.anapsil.mvvmbase.R;
 import net.anapsil.mvvmbase.utils.TextWatcherWrapper;
@@ -39,12 +43,30 @@ public class FormCustomBindings {
     }
 
     @BindingAdapter("cb_text")
-    public static void bindCheckBoxText(CheckBox cb, ObservableString text) {
+    public static void bindCompoundButtonText(CompoundButton cb, ObservableString text) {
         cb.setText(text.get());
     }
 
     @BindingAdapter("onTouch")
     public static void handleTouch(EditText view, View.OnTouchListener touchListener) {
         view.setOnTouchListener(touchListener);
+    }
+
+    @BindingAdapter("imageUrl")
+    public static void loadImage(ImageView view, ObservableString imageUrl) {
+        Picasso.with(view.getContext()).load(imageUrl.get())
+                .into(view);
+    }
+
+    @BindingAdapter({"imageUrl", "placeholder"})
+    public static void loadImage(ImageView view, ObservableString imageUrl, Drawable placeholder) {
+        try {
+            Picasso.with(view.getContext()).load(imageUrl.get())
+                    .placeholder(placeholder)
+                    .error(placeholder)
+                    .into(view);
+        } catch (IllegalArgumentException ex) {
+            view.setImageDrawable(placeholder);
+        }
     }
 }

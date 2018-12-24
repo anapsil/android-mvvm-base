@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/anapsil/android-mvvm-base'
     gitUrl = 'https://github.com/anapsil/android-mvvm-base.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.1.1'
 
     developerId = 'anapsil83'
     developerName = 'Ana Paula da Silva'
@@ -22,15 +22,16 @@ ext {
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
+
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        minSdkVersion rootProject.ext.minVersion
+        targetSdkVersion rootProject.ext.targetVersion
+        versionCode 2
         versionName libraryVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -55,9 +56,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
+
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
+    api "com.android.support:support-v4:$supportLibraryVersion"
     api "com.android.support:recyclerview-v7:$supportLibraryVersion"
     api "com.android.support:design:$supportLibraryVersion"
+
+    api "android.arch.lifecycle:extensions:$lifecycleVersion"
+    api "android.arch.lifecycle:common-java8:$lifecycleVersion"
 
     api "io.reactivex.rxjava2:rxjava:$rxjava2Version"
     api "io.reactivex.rxjava2:rxandroid:$rxandroid2Version"
@@ -68,6 +75,11 @@ dependencies {
     api "com.squareup.okhttp3:okhttp:$okhttpVersion"
     api "com.squareup.okhttp3:okhttp-urlconnection:$okhttpVersion"
     api "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    api "com.squareup.picasso:picasso:$picassoVersion"
+
+    api "com.jakewharton.picasso:picasso2-okhttp3-downloader:$okDownloaderVersion"
+
+    api 'com.google.code.gson:gson:2.8.4'
 
     api "com.google.dagger:dagger-android:$dagger2Version"
     api "com.google.dagger:dagger-android-support:$dagger2Version"
@@ -76,6 +88,7 @@ dependencies {
 
     testImplementation "junit:junit:$rootProject.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    api "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
